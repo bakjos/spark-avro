@@ -49,7 +49,7 @@ object AvroWriteBenchmark {
 
   private def generateRandomRow(): Row = {
     val rand = new Random()
-    Row(rand.nextString(defaultSize), rand.nextInt(), new Date(rand.nextLong()) ,rand.nextDouble(), rand.nextDouble(),
+    Row(rand.nextString(defaultSize), rand.nextInt(), new Date(rand.nextLong()) ,rand.nextDouble(), Decimal.apply( rand.nextDouble()),
       TestUtils.generateRandomArray(rand, defaultSize).toSeq,
       TestUtils.generateRandomMap(rand, defaultSize).toMap, Row(rand.nextInt()))
   }
